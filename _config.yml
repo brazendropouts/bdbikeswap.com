@@ -6,7 +6,7 @@ url: "http://bdbikeswap.com" # the base hostname & protocol for your site
 analyticsId: "UA-10557556-2"
 date: 1/25
 longdate: January 25, 2014
-time: 9AM - 3:30PM
+time_span: 9AM - 3:30PM
 venue: Alliant Energy Center
 room: Hall B
 prices:

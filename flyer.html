@@ -1,0 +1,66 @@
+---
+layout: flyer
+---
+
+<body>
+  <header id="top">
+    <div class="columns title">
+      <div class="row presenters">
+        <div class="columns large-12">
+          <span class="presenter">
+            <span class="phrase">Machinery Row Bicycles</span><br>
+            presents the
+          </span>
+        </div>
+      </div>
+      <div class="row event">
+        <div class="columns large-2" id="logo">
+          <img src="images/bd.svg">
+        </div>
+        <div class="columns large-10" id="name">
+          <h1>
+            <span class="phrase">Brazen Dropouts</span>
+            <span class="phrase">Bike Swap</span>
+          </h1>
+        </div>
+      </div>
+    </div>
+  </header>
+  <div class="row">
+    <div class="large-8 columns time">
+      <h2 class="text-left">
+        <span class="phrase">{{site.longdate}}</span>
+        <br>
+        <span class="phrase">{{site.time_span}}</span>
+        <br>
+        <span class="phrase">{{site.venue}}</span>
+        <span class="phrase">{{site.room}}</span>
+        <br>
+        <span class="phrase">Madison, WI</span>
+      </h2>
+    </div>
+  </div>
+  <div class="row">
+    <div class="large-7 columns punchy">
+      <ul>
+        <li>
+          <span class="item">Admission</span> is
+          <span class="price">${{site.prices.admission}}</span> before noon,
+          <span class="price">${{site.prices.lateAdmission}}</span> after
+        </li>
+        <li><span class="item">Kids 12 and under</span> get in for <strong>free</strong></li>
+        <li><span class="item">Car Parking</span> is <span class="price">${{site.prices.parking}}</span></li>
+        <li><span class="item">Bike Parking</span> is <strong>Free</strong></li>
+        <li><span class="item">Bring cash!</span></li>
+      </ul>
+    </div>
+  </div>
+  <div class="row">
+    <div class="large-8 columns punchy">
+      <h2>Want to sell at the Swap?</h2>
+      <ul>
+        <li>Head to <span class="item">bdbikeswap.com</span> for details</li>
+      </ul>
+    </div>
+  </div>
+</body>
