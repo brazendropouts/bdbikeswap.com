@@ -1,0 +1,23 @@
+# Site settings
+title: Your awesome title
+email: bikeswap@brazendropouts.org
+baseurl: "/bdbikeswap.com" # the subpath of your site, e.g. /blog/
+url: "http://bdbikeswap.com" # the base hostname & protocol for your site
+analyticsId: "UA-10557556-2"
+date: 1/25
+longdate: January 25, 2014
+time: 9AM - 3:30PM
+venue: Alliant Energy Center
+room: Hall B
+prices:
+  admission: 7
+  lateAdmission: 5
+  parking: '6.50'
+  table: 55
+  expo: 200
+  corral:
+    initial: 10
+    subsequent: 5
+
+# Build settings
+markdown: kramdown

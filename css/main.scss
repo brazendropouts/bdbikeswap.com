@@ -1,0 +1,149 @@
+---
+# main
+---
+
+@charset "UTF-8";
+
+@import "normalize/normalize";
+@import "foundation/settings";
+@import "settings";
+@import "foundation/components/global";
+@import "foundation/components/grid";
+@import "foundation/components/type";
+@import "foundation/components/visibility";
+
+$bdbg: rgba(33, 80, 143, 1);
+
+body, html {
+  background: $bdbg;
+}
+
+.row {
+  background: $bdbg;
+}
+
+.event {
+  h1 {
+    color: white;
+    border-left: 1rem solid rgba(255, 255, 255, 0.8);
+    padding-left: 1rem;
+    margin: 2rem 0 2.2rem;
+  }
+}
+
+.amp {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.presenter {
+  color: rgba(255, 255, 255, 0.65);
+  font-weight: 100;
+
+  a {
+    color: white;
+    font-weight: 400;
+  }
+}
+
+.time {
+  margin-top: -10px;
+
+  .phrase {
+    background: rgba(255, 255, 255, 0.9);
+    color: $bdbg;
+    margin-top: 10px;
+    white-space: nowrap;
+
+    &.selling {
+      color: rgba(255, 255, 255, 0.9);
+      background: $bdbg;
+
+      @media #{$medium} {
+        font-weight: 100;
+      }
+    }
+  }
+}
+
+.details {
+  h2 {
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.8);
+    border-bottom: 1px solid white;
+    text-align: center;
+  }
+}
+
+@media #{$large} {
+  .overview {
+    h2 {
+      text-align: right;
+    }
+  }
+}
+
+@media #{$small} {
+  .colophon {
+    li {
+      font-weight: 400;
+    }
+  }
+}
+
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) {
+  .colophon {
+    li {
+      font-weight: 400;
+    }
+  }
+
+  .presenter {
+    font-weight: 400;
+  }
+}
+
+@media #{$medium} {
+  .colophon {
+    li {
+      font-weight: 100;
+    }
+  }
+}
+
+.colophon {
+  li {
+    font-size: 1em;
+    color: rgba(255, 255, 255, 0.8);
+  }
+}
+
+.colophon, .overview {
+  a {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+    color: rgba(255, 255, 255, 1);
+    font-weight: 400;
+
+    &:hover {
+      border-color: rgba(25, 62, 125, 1);
+    }
+  }
+}
+
+.overview {
+  p, li {
+    color: rgba(255, 255, 255, 0.8);
+
+    .item {
+      background: rgba(255, 255, 255, 0.8);
+      color: $bdbg;
+    }
+
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: 900;
+    color: rgba(255, 255, 255, 0.8);
+  }
+}
+
+@import "base";
