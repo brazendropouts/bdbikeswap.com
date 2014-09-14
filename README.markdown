@@ -1,6 +1,20 @@
 # Brazen Dropouts Bike Swap
 
-This is the Jekyll site which powers bdbikeswap.com.
+This is the Jekyll site which powers http://bdbikeswap.com.
+
+## Contents
+
+### index.html
+
+The public-facing site with Brazen Dropouts Bike Swap information. Much of the data on the site is stored in `_config.yml` so that it can be reused in the flyer with less risk of having different information across the two.
+
+### flyer.html
+
+The source of the flyer PDF. This exists primarily so that someone can, with some patience, print the HTML to a PDF and distribute the PDF for hanging and whatnot. See flyer.pdf in the root directory for an example of what that looks like
+
+### canvas.html
+
+A canvas of sorts. We use this to lay out "images" in HTML using SVG and font elements. This makes it easy to scale up or scale down the size of the image without sacrificing image quality. To capture an image, simply take a screenshot.
 
 ## Contributing
 
