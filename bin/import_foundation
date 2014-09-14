@@ -1,0 +1,40 @@
+#!/usr/bin/env ruby
+
+#
+# This is a little script which organizes SCSS provided by Foundation in a way
+# that works better for our purposes over blindly vendorizing the source.
+#
+# Usage:
+#
+#   bin/import_foundation /path/to/foundation/root /path/to/scss/root
+#
+# Example:
+#
+#   bin/import_foundation ~/github/zurb/foundation _sass
+#
+
+require 'fileutils'
+
+def main(argv)
+  unless argv.first(2).count == 2
+    warn 'Usage: bin/import_foundation SOURCE DESTINATION'
+    exit 1
+  end
+
+  foundation_path = File.expand_path(argv[0])
+  destination_path = File.expand_path(argv[1])
+
+  {
+    'scss/normalize.scss' => 'normalize/normalize.scss',
+    'scss/foundation' => '/'
+  }.map do |src, dest|
+    [File.join(foundation_path, src), File.join(destination_path, dest)]
+  end.each do |src, dest|
+    FileUtils.mkdir_p(File.dirname(src))
+    FileUtils.mkdir_p(File.dirname(dest))
+
+    FileUtils.cp_r(src, dest)
+  end
+end
+
+main(ARGV.dup)
