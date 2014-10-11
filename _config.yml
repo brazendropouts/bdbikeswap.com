@@ -1,6 +1,6 @@
 # Site settings
 email: bikeswap@brazendropouts.org
-baseurl: "/"
+baseurl: ""
 url: "http://www.bdbikeswap.com"
 analyticsId: "UA-10557556-2"
 date: 1/25
