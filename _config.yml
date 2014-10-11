@@ -1,8 +1,7 @@
 # Site settings
-title: Your awesome title
 email: bikeswap@brazendropouts.org
-baseurl: "/bdbikeswap.com" # the subpath of your site, e.g. /blog/
-url: "http://bdbikeswap.com" # the base hostname & protocol for your site
+baseurl: "/"
+url: "http://www.bdbikeswap.com"
 analyticsId: "UA-10557556-2"
 date: 1/25
 longdate: January 25, 2014
