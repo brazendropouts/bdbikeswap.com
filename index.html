@@ -28,15 +28,14 @@ layout: default
     <div class="large-12 columns event">
       <div class="time">
         <h2>
-          <span class="phrase">{{site.date}}</span>
+          <span class="phrase">{{site.starts_at | date: '%-m/%-d/%Y'}}</span>
           <span class="phrase">
-            <span itemprop="startDate" content="2014-01-25T09:00:00-06:00">9AM</span> -
-            <span itemprop="endDate" content="2014-01-25T15:30:00-06:00">3:30PM</span>
+            <span itemprop="startDate" content="{{site.starts_at | date: '%FT%H:%M:00-06:00' }}">{{site.starts_at | date: '%-H%p'}}</span> -
+            <span itemprop="endDate" content="{{site.stops_at | date: '%FT%H:%M:00-06:00' }}">{{site.stops_at | date: '%-I%p'}}</span>
           </span>
           <br>
           <span itemscope itemtype="http://schema.org/Place">
             <span class="phrase" itemprop="name"><a itemprop="url" href="http://www.alliantenergycenter.com">{{site.venue}}</a></span>
-            <span class="phrase">{{site.room}}</span>
           </span>
           <br>
           <span class="phrase">Madison, WI</span>
@@ -44,64 +43,32 @@ layout: default
       </div>
     </div>
   </div>
-  <div class="row details">
-    <div class="large-12 columns text-center">
-      <h2>Details Below</h2>
-    </div>
-  </div>
   <div class="row">
-    <div class="large-12 columns overview punchy">
-      <p class="hide-for-small">
-        The <strong>Brazen Dropouts Bike Swap</strong> is back for its twenty-third year.
+    <div class="large-8 columns">
+      <!-- Begin MailChimp Signup Form -->
+      <link href="//cdn-images.mailchimp.com/embedcode/slim-081711.css" rel="stylesheet" type="text/css">
+      <style type="text/css">
+        #mc_embed_signup{background:#21508f; clear:left; font:14px Helvetica,Arial,sans-serif; }
+        #mc_embed_signup label { color: rgba(255, 255, 255, 0.9); }
+        /* Add your own MailChimp form style overrides in your site stylesheet or in this style block.
+          We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
+      </style>
+      <div id="mc_embed_signup">
+      <form action="//brazendropouts.us6.list-manage.com/subscribe/post?u=16ea10204eb6a0c787a639ea5&amp;id=e2c5829ad2" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+          <div id="mc_embed_signup_scroll">
+        <label for="mce-EMAIL">Get notified when registration opens for the 2015 Swap!</label>
+        <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required>
+          <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+          <div style="position: absolute; left: -5000px;"><input type="text" name="b_16ea10204eb6a0c787a639ea5_e2c5829ad2" tabindex="-1" value=""></div>
+          <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+          </div>
+      </form>
+      </div>
 
-        <span itemprop="description">
-          Peruse new and used complete bikes, bike parts, bike tools, bike
-          accessories&mdash;even bike art&mdash;under one <strong>giant</strong>
-          roof.
-        </span>
-      </p>
+      <!--End mc_embed_signup-->
     </div>
   </div>
   <div class="row">
-    <div class="large-4 small-12 columns overview">
-      <h2>Want to buy stuff?</h2>
-    </div>
-    <div class="large-8 small-12 columns overview">
-      <ul class="punchy">
-        <li>Just show up!</li>
-        <li>
-          <span class="item">Admission</span> is
-          <span class="price">${{site.prices.admission}}</span> before noon,
-          <span class="price">${{site.prices.lateAdmission}}</span> after
-        </li>
-        <li><span class="item">Kids 12 and under</span> get in for <strong>free</strong></li>
-        <li><span class="item">Car Parking</span> is <span class="price">${{site.prices.parking}}</span></li>
-        <li><span class="item">Bike Parking</span> is <strong>free</strong></li>
-        <li>We'll have <span class="item">raffles</span> every hour for Machinery Row gift cards.</li>
-      </ul>
-    </div>
-  </div>
-  <div class="row">
-    <div class="large-4 small-12 columns overview">
-      <h2>Want to sell stuff?</h2>
-    </div>
-    <div class="large-8 small-12 columns overview punchy">
-      <ul>
-        <li>We are <span class="item">sold out</span>!</li>
-        <li>We hope you'll still check out the Swap!</li>
-      </ul>
-    </div>
-  </div>
-  <div class="row">
-    <div class="large-4 small-12 columns overview">
-      <h2>Want to sell bikes?</h2>
-    </div>
-    <div class="large-8 small-12 columns overview punchy">
-      <ul>
-        <li>Bring your bikes to the Swap, and put 'em in the Bike Corral</li>
-        <li><span class="item">Corral Spots</span> are <span class="price">${{site.prices.corral.initial}}</span> for the first bike, <span class="price">${{site.prices.corral.subsequent}}</span> per bike for the rest.</li>
-      </ul>
-    </div>
   </div>
   <div class="row">
     <div class="large-12 columns punchy overview">

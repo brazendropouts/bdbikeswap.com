@@ -3,20 +3,9 @@ email: bikeswap@brazendropouts.org
 baseurl: ""
 url: "http://www.bdbikeswap.com"
 analyticsId: "UA-10557556-2"
-date: 1/25
-longdate: January 25, 2014
-time_span: 9AM - 3:30PM
+starts_at: 2015-01-10T09:00:00
+stops_at: 2015-01-10T15:00:00
 venue: Alliant Energy Center
-room: Hall B
-prices:
-  admission: 7
-  lateAdmission: 5
-  parking: '6.50'
-  table: 55
-  expo: 200
-  corral:
-    initial: 10
-    subsequent: 5
 
 # Build settings
 markdown: kramdown
