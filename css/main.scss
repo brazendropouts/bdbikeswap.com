@@ -146,4 +146,23 @@ body, html {
   }
 }
 
+.inline-form {
+  form {
+    display: inline;
+
+    input[type="email"] {
+      background: transparent;
+      border-style: solid;
+      border-width: 0 0 1px 0;
+      border-color: white;
+    }
+
+    input[type="submit"] {
+      background: rgba(0, 0, 0, 0.2);
+      color: white;
+      border: 0;
+    }
+  }
+}
+
 @import "base";

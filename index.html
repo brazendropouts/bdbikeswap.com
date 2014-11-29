@@ -28,60 +28,145 @@ layout: default
     <div class="large-12 columns event">
       <div class="time">
         <h2>
-          <span class="phrase">{{site.starts_at | date: '%-m/%-d/%Y'}}</span>
-          <span class="phrase">
-            <span itemprop="startDate" content="{{site.starts_at | date: '%FT%H:%M:00-06:00' }}">{{site.starts_at | date: '%-H%p'}}</span> -
-            <span itemprop="endDate" content="{{site.stops_at | date: '%FT%H:%M:00-06:00' }}">{{site.stops_at | date: '%-I%p'}}</span>
-          </span>
+          {% unless site.hibernation %}
+            <span class="phrase">{{site.starts_at | date: '%-m/%-d/%Y'}}</span>
+            <span class="phrase">
+              <span itemprop="startDate" content="{{site.starts_at | date: '%FT%H:%M:00-06:00' }}">{{site.starts_at | date: '%-H%p'}}</span> -
+              <span itemprop="endDate" content="{{site.stops_at | date: '%FT%H:%M:00-06:00' }}">{{site.stops_at | date: '%-I%p'}}</span>
+            </span>
+            <br>
+            <span itemscope itemtype="http://schema.org/Place">
+              <span class="phrase" itemprop="name"><a itemprop="url" href="https://www.alliantenergycenter.com/About-Us/Facilities/New-Holland-Pavilions">{{site.venue}}</a></span>
+              <br>
+              <span class="phrase">{{site.room}}</span>
+            </span>
+            <br>
+            <span class="phrase">Madison, WI</span>
+          {% endunless %}
           <br>
-          <span itemscope itemtype="http://schema.org/Place">
-            <span class="phrase" itemprop="name"><a itemprop="url" href="http://www.alliantenergycenter.com">{{site.venue}}</a></span>
-          </span>
-          <br>
-          <span class="phrase">Madison, WI</span>
+          {% unless site.hibernation %}
+            {% if site.sold_out %}
+              <span class="phrase">We are sold out!</span>
+            {% else %}
+              <span class="phrase"><a href="http://register.bdbikeswap.com">Register on BikeReg!</a></span>
+            {% endif %}
+          {% endunless %}
         </h2>
       </div>
     </div>
   </div>
-  <div class="row">
-    <div class="large-6 columns overview punchy">
-      <p>Registration for the 2015 Bike Swap will open soon. To get notified as soon as it's open, simply enter your email address in the form below.</p>
-    </div>
-  </div>
-  <div class="row">
-    <div class="large-8 columns">
-      <!-- Begin MailChimp Signup Form -->
-      <link href="//cdn-images.mailchimp.com/embedcode/slim-081711.css" rel="stylesheet" type="text/css">
-      <style type="text/css">
-        #mc_embed_signup{background:#21508f; clear:left; font:14px Helvetica,Arial,sans-serif; }
-        #mc_embed_signup label { color: rgba(255, 255, 255, 0.9); }
-        /* Add your own MailChimp form style overrides in your site stylesheet or in this style block.
-          We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
-      </style>
-      <div id="mc_embed_signup">
-      <form action="//brazendropouts.us6.list-manage.com/subscribe/post?u=16ea10204eb6a0c787a639ea5&amp;id=e2c5829ad2" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-          <div id="mc_embed_signup_scroll">
-        <label for="mce-EMAIL">Get Bike Swap Updates!</label>
-        <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required>
-          <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-          <div style="position: absolute; left: -5000px;"><input type="text" name="b_16ea10204eb6a0c787a639ea5_e2c5829ad2" tabindex="-1" value=""></div>
-          <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
-          </div>
-      </form>
+  {% if site.hibernation %}
+    <div class="row">
+      <div class="columns large-8 overview punchy">
+        <p>Want to be the first to know about next year's Swap? Add your email address below, and we'll send you a handful of tasteful and informative emails as the details of the event become clear.</p>
       </div>
-
-      <!--End mc_embed_signup-->
     </div>
-  </div>
+    <div class="row">
+      <div class="columns large-8">
+        <!-- Begin MailChimp Signup Form -->
+        <link href="//cdn-images.mailchimp.com/embedcode/slim-081711.css" rel="stylesheet" type="text/css">
+        <style type="text/css">
+          #mc_embed_signup{background:transparent; clear:left; font:14px Helvetica,Arial,sans-serif; }
+          #mc_embed_signup input.button { background-color: #eee; color: #21508f }
+          #mc_embed_signup input.button:hover { background-color: #ddd; color: #21508f }
+          /* Add your own MailChimp form style overrides in your site stylesheet or in this style block.
+            We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
+        </style>
+        <div id="mc_embed_signup">
+        <form action="//brazendropouts.us6.list-manage.com/subscribe/post?u=16ea10204eb6a0c787a639ea5&amp;id=e2c5829ad2" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+            <div id="mc_embed_signup_scroll">
+          <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required>
+            <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+            <div style="position: absolute; left: -5000px;"><input type="text" name="b_16ea10204eb6a0c787a639ea5_e2c5829ad2" tabindex="-1" value=""></div>
+            <div class="clear"><input type="submit" value="Keep me posted!" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+            </div>
+        </form>
+        </div>
+
+        <!--End mc_embed_signup-->
+      </div>
+    </div>
+  {% else %}
+    <div class="row details">
+      <div class="large-12 columns text-center">
+        <h2>Details Below</h2>
+      </div>
+    </div>
+    <div class="row">
+      <div class="large-12 columns overview punchy">
+        <p class="hide-for-small">
+          The <strong>Brazen Dropouts Bike Swap</strong> is back for its twenty-fourth year.
+
+          <span itemprop="description">
+            Peruse new and used complete bikes, bike parts, bike tools, bike
+            accessories&mdash;even bike art&mdash;under one <strong>giant</strong>
+            roof.
+          </span>
+        </p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="large-4 small-12 columns overview">
+        <h2>Want to buy stuff?</h2>
+      </div>
+      <div class="large-8 small-12 columns overview">
+        <ul class="punchy">
+          <li>Just show up!</li>
+          <li>
+            <span class="item">Admission</span> is now <strong>only</strong>
+            <span class="price">${{site.prices.admission}}</span>
+          </li>
+          <li><span class="item">Kids 12 and under</span> get in for <strong>free</strong></li>
+          <li><span class="item">Car Parking</span> is <span class="price">${{site.prices.parking}}</span></li>
+          <li><span class="item">Bike Parking</span> is <strong>free</strong></li>
+          <li>We'll have <span class="item">drawings</span> every hour for Machinery Row gift cards.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="row">
+      <div class="large-4 small-12 columns overview">
+        <h2>Want to sell stuff?</h2>
+      </div>
+      <div class="large-8 small-12 columns overview punchy">
+        <ul>
+          {% if site.sold_out %}
+            <li>We are <span class="item">sold out</span>!</li>
+            <li>We hope you'll still check out the Swap!</li>
+          {% else %}
+            <li>Head over to <a href="http://register.bdbikeswap.com">BikeReg</a> to register</li>
+            <li><span class="item">Tables</span> start at <span class="price">${{site.prices.table}}</span></li>
+            <li><span class="item">10x10 Expo Spaces</span> go for <span class="price">${{site.prices.expo}}</span></li>
+          {% endif %}
+        </ul>
+      </div>
+    </div>
+    <div class="row">
+      <div class="large-4 small-12 columns overview">
+        <h2>Want to sell bikes?</h2>
+      </div>
+      <div class="large-8 small-12 columns overview punchy">
+        <ul>
+          <li>Bring your bikes to the Swap, and put 'em in the Bike Corral</li>
+          <li><span class="item">Corral Spots</span> are <span class="price">${{site.prices.corral.initial}}</span> for the first bike, <span class="price">${{site.prices.corral.subsequent}}</span> per bike for the rest.</li>
+        </ul>
+      </div>
+    </div>
+  {% endif %}
   <div class="row">
-  </div>
-  <div class="row">
-    <div class="large-12 columns punchy overview">
+    <div class="large-9 columns punchy overview">
       <p class="hide-for-small">
-        <strong>Questions?</strong> Email <a href="mailto:{{site.email}}">{{site.email}}</a>
+        <strong>Questions?</strong> Email <a href="mailto:{{site.email}}">{{site.email}}</a>.
+        <br>
+        {% if site.hibernation %}
+          We may not be able to reply until we begin to plan the Swap.
+        {% endif %}
       </p>
       <p class="show-for-small">
-        <strong>Questions?</strong> <a href="mailto:{{site.email}}">Email us</a>
+        <strong>Questions?</strong> <a href="mailto:{{site.email}}">Email us</a>.
+        <br>
+        {% if site.hibernation %}
+          We may not be able to reply until we begin to plan the Swap.
+        {% endif %}
       </p>
     </div>
   </div>
@@ -93,6 +178,16 @@ layout: default
         <span itemprop="location" itemscope itemtype="http://schema.org/City" itemtype="city"><span itemprop="name"><a itemprop="url" href="http://www.cityofmadison.com/">Madison, WI</a></span></span>.
         </li>
         <li>We hope you'll join us at the Swap and on the Road!</li>
+        {% unless site.hibernation %}
+          <li class="inline-form">If you'd like to stay up-to-date on Swap matters, be sure to sign up for our mailing list:
+            <form action="//brazendropouts.us6.list-manage.com/subscribe/post?u=16ea10204eb6a0c787a639ea5&amp;id=e2c5829ad2" method="post" name="mc-embedded-subscribe-form-footer" target="_blank" novalidate>
+              <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required>
+              <input type="submit" value="Go" name="subscribe" id="mc-embedded-subscribe" class="button">
+              <div style="position: absolute; left: -5000px;"><input type="text" name="b_16ea10204eb6a0c787a639ea5_e2c5829ad2" tabindex="-1" value=""></div>
+              </div>
+            </form>
+          </li>
+        {% endunless %}
       </ul>
     </div>
   </div>

@@ -1,4 +1,0 @@
-#!/usr/bin/env bash
-
-given="$@"
-vagrant ssh -c "cd /vagrant && jekyll $given"

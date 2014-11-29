@@ -6,6 +6,20 @@ analyticsId: "UA-10557556-2"
 starts_at: 2015-01-10T09:00:00
 stops_at: 2015-01-10T15:00:00
 venue: Alliant Energy Center
+room: New Holland Pavilions
+
+sold_out: false
+hibernation: false
+
+# Pricing
+prices:
+  admission: 5
+  parking: 7
+  table: 55
+  expo: 200
+  corral:
+    initial: 10
+    subsequent: 5
 
 # Build settings
 markdown: kramdown
