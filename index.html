@@ -31,7 +31,7 @@ layout: default
           {% unless site.hibernation %}
             <span class="phrase">{{site.starts_at | date: '%-m/%-d/%Y'}}</span>
             <span class="phrase">
-              <span itemprop="startDate" content="{{site.starts_at | date: '%FT%H:%M:00-06:00' }}">{{site.starts_at | date: '%-H%p'}}</span> -
+              <span itemprop="startDate" content="{{site.starts_at | date: '%FT%H:%M:00-06:00' }}">{{site.starts_at | date: '%-H:%M%p'}}</span> -
               <span itemprop="endDate" content="{{site.stops_at | date: '%FT%H:%M:00-06:00' }}">{{site.stops_at | date: '%-I%p'}}</span>
             </span>
             <br>
