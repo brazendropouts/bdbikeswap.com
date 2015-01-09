@@ -87,11 +87,35 @@ layout: default
       </div>
     </div>
   {% else %}
-    <div class="row details">
-      <div class="large-12 columns text-center">
-        <h2>Details Below</h2>
+    {% if site.shows_unloading_instructions %}
+      <div class="row details unloading">
+        <div class="large-12 columns text-center">
+          <h2>Unloading Instructions</h2>
+        </div>
       </div>
-    </div>
+      <div class="row">
+        <div class="large-12 columns overview punchy unloading">
+          <p>Unloading starts at <strong>6:45AM</strong>.</p>
+          <ol>
+            <li>Find a place to park in the unloading area <a href="http://f.cl.ly/items/141N2g1b2Z0k1q0K3b3O/bd-swap-unload-map.png" target="_blank">behind Pavilion #1</a></li>
+            <li>Check in inside the Pavilion</li>
+            <li>Grab a cart and start to unload. Members of the Brazen Dropouts will be there to help!</li>
+            <li>Park in one of the North, South, or Southeast lots</li>
+          </ol>
+        </div>
+      </div>
+      <div class="row details">
+        <div class="large-12 columns text-center">
+          <h2>Other Details Below</h2>
+        </div>
+      </div>
+    {% else %}
+      <div class="row details">
+        <div class="large-12 columns text-center">
+          <h2>Details Below</h2>
+        </div>
+      </div>
+    {% endif %}
     <div class="row">
       <div class="large-12 columns overview punchy">
         <p class="hide-for-small">
@@ -148,6 +172,7 @@ layout: default
         <ul>
           <li>Bring your bikes to the Swap, and put 'em in the Bike Corral</li>
           <li><span class="item">Corral Spots</span> are <span class="price">${{site.prices.corral.initial}}</span> for the first bike, <span class="price">${{site.prices.corral.subsequent}}</span> per bike for the rest.</li>
+          <li>Pre-registration is <strong>not required</strong>.</li>
         </ul>
       </div>
     </div>

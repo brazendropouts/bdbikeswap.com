@@ -10,6 +10,7 @@ room: New Holland Pavilions
 
 sold_out: true
 hibernation: false
+shows_unloading_instructions: true
 
 # Pricing
 prices:

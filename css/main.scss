@@ -74,6 +74,13 @@ body, html {
   }
 }
 
+.unloading {
+  ol > li {
+    list-style: decimal;
+    margin-left: 2em;
+  }
+}
+
 @media #{$large} {
   .overview {
     h2 {
